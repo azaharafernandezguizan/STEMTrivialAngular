@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div [hidden]="isWelcomeVisible" class="welcomeDiv">
+  <img src='/assets/images/STEMbienvenida.jpg'/>
+  <h1>{{initialMessage}}</h1>
+  <button (click)="startGame()">Jugar</button>
+</div>
+
+
+<div [hidden]= "isGameVisible" class="gameDiv" ng-if="currentQuestion != null">
+  <h1>{{currentQuestion ? currentQuestion.category : null}}</h1>
+  <h2  class="questionText">{{currentQuestion ? currentQuestion.text : null}}</h2>
+    <div *ngFor="let answer of currentAnswers" class="questionOptions">
+      <input type="radio"  [(ngModel)]="valueSelected" [value]="answer.id" checked=false>
+      {{answer ? answer.text : null}}
+    </div>
+    <button (click) = "nextQuestion()">Jugar</button>
+</div>
+
+<div [hidden]="isResultVisible" class="resultDiv">
+  <img alt="imagen resultado final" src={{result.urlImage}} class="medallas"/>
+  <h1>{{result.category}}</h1>
+  <h2>{{result.explanation}}</h2>
+  <button (click) = "playAgain()">Volver a Jugar</button>
+</div>
+
