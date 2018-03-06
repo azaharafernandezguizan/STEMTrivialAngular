@@ -1,0 +1,6 @@
+Pending:
+
+1. Add service and models for Questions and Answers.
+2. Add json with Questions.
+3. Fix bug in radio selected.
+4. Document in ppt.

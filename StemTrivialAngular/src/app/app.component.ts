@@ -126,7 +126,6 @@ export class AppComponent {
 
   nextQuestion() {
     this.indexCurrentQuestion++;
-    debugger;
     if (this.valueSelected == this.currentQuestion.correctAnswerId) {
       this.result.points++;
     }
