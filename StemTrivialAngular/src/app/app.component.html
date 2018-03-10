@@ -8,7 +8,7 @@
 
 <div [hidden]= "isGameVisible" class="gameDiv" ng-if="currentQuestion != null">
   <h1>{{currentQuestion ? currentQuestion.category : null}}</h1>
-  <h2  class="questionText">{{currentQuestion ? currentQuestion.text : null}}</h2>
+  <h2  class="questionText">{{currentQuestion ? currentQuestion.questionText : null}}</h2>
     <div *ngFor="let answer of currentAnswers" class="questionOptions">
       <input type="radio"  [(ngModel)]="valueSelected" [value]="answer.id" checked=false>
       {{answer ? answer.text : null}}
