@@ -10,7 +10,8 @@ export class QuestionService {
   constructor(private http: Http) { }
 
   getQuestions() {
-    return this.http.get('../../assets/data/questions.json').map(response => this.toQuestions(response.json()));
+    return this.http.get('../../assets/data/questions.json')
+      .map(response => this.toQuestions(response.json()));
   }
 
   toQuestions(questions: any): Question[] {
