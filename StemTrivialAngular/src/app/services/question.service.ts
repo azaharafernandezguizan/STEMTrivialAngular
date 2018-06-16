@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/Rx';
 import { Http } from '@angular/http';
 import { Question } from '../models/question';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class QuestionService {
 
   constructor(private http: Http) { }
 
-  getQuestions() {
+  getQuestions(): Observable<Question[]> {
     return this.http.get('../../assets/data/questions.json')
       .map(response => this.toQuestions(response.json()));
   }
